@@ -1,0 +1,176 @@
+/* إعادة تعيين الأنماط الافتراضية */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, table, th, td, input, select, button, textarea {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* تنسيق الجسم العام */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6f42c1, #ff416c);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 300;
+}
+
+/* حاوية المحتوى */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-top: 60px;
+    backdrop-filter: blur(10px);
+}
+
+/* العنوان الرئيسي */
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    letter-spacing: 2px;
+}
+
+/* العنوان الفرعي */
+p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #d1d1d1;
+    line-height: 1.5;
+}
+
+/* الرسائل مثل النجاح أو الفشل */
+p.error {
+    color: #e74c3c;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* الحقول المدخلة */
+input, select, button, textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #ff416c;
+    outline: none;
+}
+
+/* تنسيق زر التنفيذ */
+button {
+    background-color: #ff416c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #e03e5f;
+    transform: scale(1.05);
+}
+
+/* تنسيق النص الخاص بالبيان */
+textarea {
+    resize: none;
+    height: 160px;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f9f9f9;
+}
+
+/* تنسيق الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 18px;
+    text-align: center;
+    font-size: 16px;
+}
+
+th {
+    background-color: #6f42c1;
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fff;
+    color: #333;
+}
+
+/* تحسين عرض الجدول على الهواتف */
+@media (max-width: 768px) {
+    table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        display: block;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        background: #fff;
+        color: #333;
+        padding: 10px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        display: block;
+        text-align: right;
+        padding: 8px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #6f42c1;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+}
